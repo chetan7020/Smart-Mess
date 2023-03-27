@@ -63,9 +63,7 @@
                     android:layout_height="30dp"
                     android:src="@drawable/notification" />
 
-
             </LinearLayout>
-
 
         </RelativeLayout>
 
@@ -132,13 +130,26 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/rbLocation"
+                        android:id="@+id/rbAll"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/radio_selector"
                         android:button="@android:color/transparent"
                         android:checked="true"
+                        android:elevation="4dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="All"
+                        android:textColor="@drawable/text_color" />
+
+                    <RadioButton
+                        android:id="@+id/rbLocation"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
                         android:elevation="4dp"
                         android:gravity="center"
                         android:padding="10dp"
@@ -213,16 +224,9 @@
             android:scrollbars="none">
 
             <LinearLayout
+                android:id="@+id/llTopRatedData"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <include layout="@layout/customer_mess_top_rated_layout" />
-
-                <include layout="@layout/customer_mess_top_rated_layout" />
-
-                <include layout="@layout/customer_mess_top_rated_layout" />
-
-            </LinearLayout>
+                android:layout_height="wrap_content" />
 
 
         </HorizontalScrollView>
@@ -240,20 +244,13 @@
 
 
         <LinearLayout
+            android:id="@+id/llAllData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/all_txt"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:orientation="vertical">
-
-            <include layout="@layout/customer_mess_all_layout" />
-
-            <include layout="@layout/customer_mess_all_layout" />
-
-            <include layout="@layout/customer_mess_all_layout" />
-
-            <include layout="@layout/customer_mess_all_layout" />
 
         </LinearLayout>
 

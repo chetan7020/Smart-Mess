@@ -31,7 +31,6 @@ public class ReviewActivity extends AppCompatActivity {
     private EditText etText;
     private MaterialRatingBar rbStar;
     private Button btnPost;
-
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
     private String text, email, currentUser;
@@ -51,11 +50,11 @@ public class ReviewActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-//        email = getIntent().getStringExtra("email");
-        email = "chetandagajipatil333@gmail.com";
+        email = getIntent().getStringExtra("email");
+//        email = "chetandagajipatil333@gmail.com";
 
-//        currentUser = firebaseAuth.getCurrentUser().getEmail();
-        currentUser = "xyz123@gmail.com";
+        currentUser = firebaseAuth.getCurrentUser().getEmail();
+//        currentUser = "xyz123@gmail.com";
 
         text = "";
     }

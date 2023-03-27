@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                                         @Override
                                                         public void onSuccess(AuthResult authResult) {
-//                                                            startActivity(new Intent(LoginActivity.this, CustomerMainActivity.class));
+                                                            startActivity(new Intent(LoginActivity.this, CustomerMainActivity.class));
                                                             finish();
                                                         }
                                                     }).addOnFailureListener(new OnFailureListener() {

@@ -23,6 +23,7 @@ import com.google.firebase.firestore.GeoPoint;
 import com.safar.smartmessdevhacks.customer.CustomerMainActivity;
 import com.safar.smartmessdevhacks.model.Owner;
 import com.safar.smartmessdevhacks.model.User;
+import com.safar.smartmessdevhacks.owner.OwnerMainActivity;
 
 public class OwnerRegisterActivity extends AppCompatActivity {
 
@@ -97,7 +98,7 @@ public class OwnerRegisterActivity extends AppCompatActivity {
                                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                                 @Override
                                                                 public void onSuccess(Void unused) {
-                                                                    startActivity(new Intent(OwnerRegisterActivity.this, CustomerMainActivity.class));
+                                                                    startActivity(new Intent(OwnerRegisterActivity.this, OwnerMainActivity.class));
                                                                     finish();
                                                                 }
                                                             }).addOnFailureListener(new OnFailureListener() {
