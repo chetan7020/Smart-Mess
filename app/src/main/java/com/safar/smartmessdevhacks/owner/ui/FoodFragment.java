@@ -8,9 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.safar.smartmessdevhacks.databinding.OwnerFragmentCustomerBinding;
 import com.safar.smartmessdevhacks.databinding.OwnerFragmentFoodBinding;
 
 public class FoodFragment extends Fragment {
