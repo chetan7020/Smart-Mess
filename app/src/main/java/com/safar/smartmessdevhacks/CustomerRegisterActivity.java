@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,6 +36,12 @@ public class CustomerRegisterActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private String name, email, phoneNumber, password;
 
+    String[] items = {"Veg", "Non-Veg", "Vegan"};
+    String item;
+
+    AutoCompleteTextView autoCompleteTextView;
+    ArrayAdapter<String> adapterItems;
+
     private void init() {
         initialize();
         registerListener();
@@ -44,12 +52,17 @@ public class CustomerRegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPhoneNumber = findViewById(R.id.etPhoneNumber);
         etPassword = findViewById(R.id.etPassword);
+        autoCompleteTextView = findViewById(R.id.actvPreference);
 
         btnRegister = findViewById(R.id.btnRegister);
 
         tvLogin = findViewById(R.id.tvLogin);
 
         name = email = phoneNumber = password = "";
+
+
+        adapterItems = new ArrayAdapter<String>(this, R.layout.list_item, items);
+        autoCompleteTextView.setAdapter(adapterItems);
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
