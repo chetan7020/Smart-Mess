@@ -51,7 +51,6 @@ public class CustomerRegisterActivity extends AppCompatActivity {
 
         name = email = phoneNumber = password = "";
 
-
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
     }

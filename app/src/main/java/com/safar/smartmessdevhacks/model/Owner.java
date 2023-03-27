@@ -7,7 +7,7 @@ public class Owner {
     private String name, email, messName, upi, geoHash, phoneNumber;
     private GeoPoint geoPoint;
     private int customerCount;
-    private double avgReview;
+    private double reviewCount, avgReview;
 
     public Owner() {
     }
@@ -21,7 +21,12 @@ public class Owner {
         this.phoneNumber = phoneNumber;
         this.geoPoint = geoPoint;
         this.customerCount = 0;
+        this.reviewCount = 0.0;
         this.avgReview = 0.0;
+    }
+
+    public Owner(double avgReview) {
+        this.reviewCount = avgReview;
     }
 
     public String getPhoneNumber() {
@@ -86,6 +91,14 @@ public class Owner {
 
     public void setCustomerCount(int customerCount) {
         this.customerCount = customerCount;
+    }
+
+    public double getReviewCount() {
+        return reviewCount;
+    }
+
+    public void setReviewCount(double reviewCount) {
+        this.reviewCount = reviewCount;
     }
 
     public double getAvgReview() {
