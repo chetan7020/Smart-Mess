@@ -112,16 +112,6 @@
                 android:inputType="phone"
                 android:padding="16dp" />
 
-            <EditText
-                android:id="@+id/etMonthlyPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/editext_drawable"
-                android:fontFamily="@font/poppins_medium"
-                android:hint="Monthly Price"
-                android:inputType="number"
-                android:padding="16dp" />
 
             <EditText
                 android:id="@+id/etupi"
