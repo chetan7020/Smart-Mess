@@ -12,6 +12,9 @@
         android:theme="@style/Theme.SmartMessDevHacks"
         tools:targetApi="31">
         <activity
+            android:name=".MessInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".customer.ReviewActivity"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
@@ -20,7 +23,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".DummyActivity"
@@ -37,15 +39,14 @@
         <activity
             android:name=".OwnerRegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".SplashActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
