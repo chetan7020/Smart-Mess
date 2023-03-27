@@ -21,7 +21,9 @@
         <activity
             android:name=".customer.ReviewActivity"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"></activity>
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+        </activity>
         <activity
             android:name=".DummyActivity"
             android:exported="false" />
