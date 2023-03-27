@@ -12,11 +12,11 @@
         android:theme="@style/Theme.SmartMessDevHacks"
         tools:targetApi="31">
         <activity
-            android:name=".OwnerMainActivity"
+            android:name=".owner.OwnerMainActivity"
             android:exported="false"
             android:label="@string/title_activity_owner_main" />
         <activity
-            android:name=".MessInfoActivity"
+            android:name=".customer.MessInfoActivity"
             android:exported="false" />
         <activity
             android:name=".customer.ReviewActivity"
