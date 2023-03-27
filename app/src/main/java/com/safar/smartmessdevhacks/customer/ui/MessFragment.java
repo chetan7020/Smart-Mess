@@ -39,9 +39,7 @@ public class MessFragment extends Fragment {
 
     private static final String TAG = "MessFragment";
     private CustomerFragmentMessBinding binding;
-
     private FirebaseAuth firebaseAuth;
-
     private FirebaseFirestore firebaseFirestore;
 
     private void init() {

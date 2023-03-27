@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.safar.smartmessdevhacks.R;
 
 public class MessInfoActivity extends AppCompatActivity {
@@ -17,6 +19,8 @@ public class MessInfoActivity extends AppCompatActivity {
 
     private ImageView ivAddReview, ivCall, ivBack;
 
+    private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firebaseFirestore;
     private RatingBar rbStar;
     private String email;
 
@@ -49,6 +53,7 @@ public class MessInfoActivity extends AppCompatActivity {
     }
 
     private void getOwnerInfo() {
+
     }
 
     @Override
