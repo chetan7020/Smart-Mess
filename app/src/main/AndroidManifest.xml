@@ -13,13 +13,9 @@
         tools:targetApi="31">
         <activity
             android:name=".customer.ReviewActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
@@ -27,9 +23,17 @@
             android:exported="false" />
         <activity
             android:name=".customer.CustomerMainActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_customer_main"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".CustomerRegisterActivity"
             android:exported="false"
