@@ -6,13 +6,13 @@ public class Owner {
 
     private String name, email, messName, upi, geoHash, phoneNumber;
     private GeoPoint geoPoint;
-    private int monthlyPrice, customerCount;
+    private int customerCount;
     private double avgReview;
 
     public Owner() {
     }
 
-    public Owner(String name, String email, String messName, String upi, String geoHash, String phoneNumber, GeoPoint geoPoint, int monthlyPrice) {
+    public Owner(String name, String email, String messName, String upi, String geoHash, String phoneNumber, GeoPoint geoPoint) {
         this.name = name;
         this.email = email;
         this.messName = messName;
@@ -20,7 +20,6 @@ public class Owner {
         this.geoHash = geoHash;
         this.phoneNumber = phoneNumber;
         this.geoPoint = geoPoint;
-        this.monthlyPrice = monthlyPrice;
         this.customerCount = 0;
         this.avgReview = 0.0;
     }
@@ -79,14 +78,6 @@ public class Owner {
 
     public void setGeoPoint(GeoPoint geoPoint) {
         this.geoPoint = geoPoint;
-    }
-
-    public int getMonthlyPrice() {
-        return monthlyPrice;
-    }
-
-    public void setMonthlyPrice(int monthlyPrice) {
-        this.monthlyPrice = monthlyPrice;
     }
 
     public int getCustomerCount() {

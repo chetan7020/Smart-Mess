@@ -83,7 +83,7 @@
 
 
             <EditText
-                android:id="@+id/etname"
+                android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/editext_drawable"
@@ -92,7 +92,7 @@
                 android:padding="16dp" />
 
             <EditText
-                android:id="@+id/etmessname"
+                android:id="@+id/etMessName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -102,7 +102,7 @@
                 android:padding="16dp" />
 
             <EditText
-                android:id="@+id/etphone"
+                android:id="@+id/etPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -114,7 +114,7 @@
 
 
             <EditText
-                android:id="@+id/etupi"
+                android:id="@+id/etUpi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -125,7 +125,7 @@
 
 
             <EditText
-                android:id="@+id/etemail"
+                android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -145,7 +145,7 @@
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etpassword"
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/editext_drawable"
@@ -163,10 +163,8 @@
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
-
-
                 <EditText
-                    android:id="@+id/etlocation"
+                    android:id="@+id/etLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/editext_drawable"
@@ -178,7 +176,7 @@
                     android:padding="16dp" />
 
                 <Button
-                    android:id="@+id/btngetlocation"
+                    android:id="@+id/btnGetLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_drawable"
@@ -197,7 +195,7 @@
 
 
             <Button
-                android:id="@+id/btnregister"
+                android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -228,10 +226,10 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/btnlogin"
+                android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Join Now"
+                android:text="Login"
                 android:textSize="16dp"
                 android:textColor="#fe724d"
                 android:fontFamily="@font/poppins_semibold"

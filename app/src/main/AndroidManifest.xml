@@ -12,18 +12,13 @@
         android:theme="@style/Theme.SmartMessDevHacks"
         tools:targetApi="31">
         <activity
+            android:name=".DummyActivity"
+            android:exported="false" />
+        <activity
             android:name=".customer.CustomerMainActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/title_activity_customer_main"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".CustomerRegisterActivity"
             android:exported="false"
@@ -31,14 +26,22 @@
         <activity
             android:name=".OwnerRegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".SplashActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

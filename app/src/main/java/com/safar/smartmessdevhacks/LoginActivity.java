@@ -19,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.safar.smartmessdevhacks.customer.CustomerMainActivity;
 import com.safar.smartmessdevhacks.model.Customer;
 import com.safar.smartmessdevhacks.model.Owner;
 
@@ -67,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 getText();
 
                 if (checkEmpty()) {
@@ -81,14 +83,12 @@ public class LoginActivity extends AppCompatActivity {
                                         String userType = document.get("userType").toString();
 
                                         if (userType.equals("Owner")) {
-                                            Owner owner = document.toObject(Owner.class);
-
                                             firebaseAuth
                                                     .signInWithEmailAndPassword(email, password)
                                                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                                         @Override
                                                         public void onSuccess(AuthResult authResult) {
-//                                                            startActivity(new Intent(LoginActivity.this, OwnerMainActivity.class));
+                                                            startActivity(new Intent(LoginActivity.this, CustomerMainActivity.class));
                                                             finish();
                                                         }
                                                     }).addOnFailureListener(new OnFailureListener() {
@@ -99,7 +99,6 @@ public class LoginActivity extends AppCompatActivity {
                                                     });
 
                                         } else if (userType.equals("Customer")) {
-                                            Customer customer = document.toObject(Customer.class);
 
                                             firebaseAuth
                                                     .signInWithEmailAndPassword(email, password)
@@ -142,6 +141,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, OwnerRegisterActivity.class));
+            }
+        });
+
+        tvForgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Yet to build", Toast.LENGTH_SHORT).show();
             }
         });
     }
