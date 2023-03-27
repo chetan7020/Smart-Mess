@@ -84,7 +84,7 @@ public class CustomerRegisterActivity extends AppCompatActivity {
                                                 public void onSuccess(Void unused) {
 
                                                     firebaseFirestore
-                                                            .collection("Owner")
+                                                            .collection("Customer")
                                                             .document(email)
                                                             .set(new Customer(name, email, phoneNumber))
                                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
