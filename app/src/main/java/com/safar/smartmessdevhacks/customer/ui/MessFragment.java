@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import com.safar.smartmessdevhacks.databinding.CustomerFragmentMessBinding;
 
+
 public class MessFragment extends Fragment {
 
     private CustomerFragmentMessBinding binding;

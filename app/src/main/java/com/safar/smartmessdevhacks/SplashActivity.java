@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.safar.smartmessdevhacks.customer.CustomerMainActivity;
+import com.safar.smartmessdevhacks.owner.OwnerMainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -51,7 +52,7 @@ public class SplashActivity extends AppCompatActivity {
                             String userType = document.get("userType").toString();
 
                             if (userType.equals("Owner")) {
-                                startActivity(new Intent(SplashActivity.this, CustomerMainActivity.class));
+                                startActivity(new Intent(SplashActivity.this, OwnerMainActivity.class));
                                 finish();
                             } else if (userType.equals("Customer")) {
                                 startActivity(new Intent(SplashActivity.this, CustomerMainActivity.class));

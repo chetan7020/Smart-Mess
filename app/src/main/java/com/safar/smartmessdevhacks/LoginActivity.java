@@ -22,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.safar.smartmessdevhacks.customer.CustomerMainActivity;
 import com.safar.smartmessdevhacks.model.Customer;
 import com.safar.smartmessdevhacks.model.Owner;
+import com.safar.smartmessdevhacks.owner.OwnerMainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -88,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                                         @Override
                                                         public void onSuccess(AuthResult authResult) {
-                                                            startActivity(new Intent(LoginActivity.this, CustomerMainActivity.class));
+                                                            startActivity(new Intent(LoginActivity.this, OwnerMainActivity.class));
                                                             finish();
                                                         }
                                                     }).addOnFailureListener(new OnFailureListener() {
