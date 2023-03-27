@@ -15,16 +15,16 @@
             android:id="@+id/linear_layout_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="smart"
-                android:textSize="40dp"
                 android:textColor="#fe724d"
+                android:textSize="40dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -34,7 +34,7 @@
                 android:paddingLeft="1dp"
                 android:text="mess"
                 android:textColor="@color/black"
-                android:textSize="38dp"/>
+                android:textSize="38dp" />
 
 
         </LinearLayout>
@@ -44,9 +44,9 @@
             android:id="@+id/linear_layout_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_below="@id/linear_layout_1"
             android:layout_marginTop="20dp"
+            android:orientation="vertical"
             android:padding="20dp">
 
 
@@ -77,76 +77,69 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_layout_2"
+            android:layout_marginTop="20dp"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_marginTop="20dp">
-
-
+            android:padding="20dp">
 
             <EditText
-                android:id="@+id/etemail"
+                android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/editext_drawable"
-                android:padding="16dp"
-                android:drawableRight="@drawable/baseline_check_circle_outline_24"
-                android:hint="Email"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/poppins_medium"/>
+                android:background="@drawable/editext_drawable"
+                android:drawableRight="@drawable/baseline_check_circle_outline_24"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Email"
+                android:padding="16dp" />
 
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/dark_grey"
+                android:layout_marginTop="20dp"
                 app:hintEnabled="false"
-                android:layout_marginTop="20dp">
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/dark_grey">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etpassword"
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/editext_drawable"
-                    android:padding="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:fontFamily="@font/poppins_medium"/>
+                    android:padding="16dp" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
             <TextView
-                android:id="@+id/forgot_password"
+                android:id="@+id/tvForgetPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Forgot Password?"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:textColor="@color/orange"
+                android:text="Forgot Password?"
                 android:textAlignment="textEnd"
-                android:textSize="15dp"/>
-
-
-
+                android:textColor="@color/orange"
+                android:textSize="15dp" />
 
 
             <Button
-                android:id="@+id/btnlogin"
+                android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:padding="15dp"
                 android:background="@drawable/button_drawable"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="15dp"
                 android:text="Sign in"
-                android:textSize="17dp"
                 android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
+                android:textSize="17dp" />
 
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -154,10 +147,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_layout_3"
-            android:paddingBottom="10dp"
             android:layout_marginTop="30dp"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -170,21 +163,21 @@
                     android:layout_width="100dp"
                     android:layout_height="2dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/grey"/>
+                    android:background="@color/grey" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sign in with"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:fontFamily="@font/poppins_semibold"/>
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Sign in with" />
 
                 <View
                     android:layout_width="100dp"
                     android:layout_height="2dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/grey"/>
+                    android:background="@color/grey" />
 
             </LinearLayout>
 
@@ -192,36 +185,36 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
                 android:layout_marginTop="25dp"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
 
                 <TextView
-                    android:id="@+id/btnregistercustomer"
+                    android:id="@+id/tvCustomer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/editext_drawable"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:padding="10dp"
                     android:text="Customer"
-                    android:textSize="16dp"
                     android:textAlignment="center"
                     android:textColor="#60626A"
-                    android:layout_marginRight="20dp"
-                    android:padding="10dp"
-                    android:background="@drawable/editext_drawable"
-                    android:fontFamily="@font/poppins_semibold"/>
+                    android:textSize="16dp" />
 
                 <TextView
-                    android:id="@+id/btnregisterowner"
+                    android:id="@+id/tvOwner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Owner"
-                    android:textSize="16dp"
+                    android:background="@drawable/editext_drawable"
                     android:fontFamily="@font/poppins_semibold"
+                    android:padding="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="Owner"
                     android:textAlignment="center"
                     android:textColor="#60626A"
-                    android:padding="10dp"
-                    android:background="@drawable/editext_drawable"
-                    android:paddingLeft="10dp"/>
+                    android:textSize="16dp" />
 
 
             </LinearLayout>
@@ -229,9 +222,7 @@
         </LinearLayout>
 
 
-
     </RelativeLayout>
-
 
 
 </ScrollView>

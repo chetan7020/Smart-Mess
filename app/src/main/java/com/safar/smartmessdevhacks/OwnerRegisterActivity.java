@@ -6,6 +6,17 @@ import android.os.Bundle;
 
 public class OwnerRegisterActivity extends AppCompatActivity {
 
+    private void init(){
+
+    }
+
+    private void initialize(){
+
+    }
+
+    private void registerListener(){
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
