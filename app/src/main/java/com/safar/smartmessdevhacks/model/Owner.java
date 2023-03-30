@@ -1,10 +1,13 @@
 package com.safar.smartmessdevhacks.model;
 
+import android.util.Log;
+
 import com.google.firebase.firestore.GeoPoint;
 
 public class Owner {
 
-    private String name, email, messName, upi, geoHash, phoneNumber;
+    private static final String TAG = "Owner";
+    private String name, email, messName, upi, geoHash, phoneNumber, messType;
     private GeoPoint geoPoint;
     private int customerCount;
     private double reviewCount, avgReview;
@@ -12,7 +15,7 @@ public class Owner {
     public Owner() {
     }
 
-    public Owner(String name, String email, String messName, String upi, String geoHash, String phoneNumber, GeoPoint geoPoint) {
+    public Owner(String name, String email, String messName, String upi, String geoHash, String phoneNumber, GeoPoint geoPoint, String messType) {
         this.name = name;
         this.email = email;
         this.messName = messName;
@@ -23,6 +26,7 @@ public class Owner {
         this.customerCount = 0;
         this.reviewCount = 0.0;
         this.avgReview = 0.0;
+        this.messType = messType;
     }
 
     public Owner(double avgReview) {
@@ -107,5 +111,13 @@ public class Owner {
 
     public void setAvgReview(double avgReview) {
         this.avgReview = avgReview;
+    }
+
+    public String getMessType() {
+        return messType;
+    }
+
+    public void setMessType(String messType) {
+        this.messType = messType;
     }
 }

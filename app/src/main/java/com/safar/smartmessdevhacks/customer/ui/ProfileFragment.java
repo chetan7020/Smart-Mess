@@ -135,14 +135,6 @@ public class ProfileFragment extends Fragment {
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                        String name = value.getString("name");
-                        String item = value.getString("item");
-                        String customerphone = value.getString("phoneNumber");
-
-
-                        binding.tvName.setText(name);
-                        binding.tvPreference.setText(item);
-                        binding.tvPhoneNumber.setText(customerphone);
                     }
                 });
     }

@@ -28,6 +28,7 @@
                 <ImageView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:minHeight="170dp"
                     android:scaleType="center"
                     android:src="@drawable/mess_img_1" />
 
@@ -60,6 +61,14 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:text="Near wagholi"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/tvMessType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Veg"
                     android:textSize="14dp" />
 
                 <LinearLayout

@@ -16,24 +16,24 @@
             android:id="@+id/linear_layout_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="smart"
-                android:textSize="40dp"
                 android:textColor="#fe724d"
+                android:textSize="40dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
                 android:paddingLeft="1dp"
                 android:text="mess"
-                android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/black"
                 android:textSize="38dp" />
 
@@ -44,9 +44,9 @@
             android:id="@+id/linear_layout_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_below="@id/linear_layout_1"
             android:layout_marginTop="15dp"
+            android:orientation="vertical"
             android:padding="20dp">
 
 
@@ -77,9 +77,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_layout_2"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_marginTop="10dp">
+            android:padding="20dp">
 
 
             <EditText
@@ -100,6 +100,16 @@
                 android:fontFamily="@font/poppins_medium"
                 android:hint="Mess Name"
                 android:padding="16dp" />
+
+            <Spinner
+                android:id="@+id/spMessType"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/editext_drawable"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="16dp"
+                android:spinnerMode="dropdown" />
 
             <EditText
                 android:id="@+id/etPhoneNumber"
@@ -139,10 +149,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/dark_grey"
+                android:layout_marginTop="20dp"
                 app:hintEnabled="false"
-                android:layout_marginTop="20dp">
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/dark_grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
@@ -153,7 +163,6 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="16dp" />
-
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,28 +176,26 @@
                     android:id="@+id/etLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/editext_drawable"
                     android:fontFamily="@font/poppins_medium"
                     android:hint="Your Location"
-                    android:layout_weight="1"
                     android:maxLength="15"
-                    android:layout_marginRight="10dp"
                     android:padding="16dp" />
 
                 <Button
                     android:id="@+id/btnGetLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1.5"
                     android:background="@drawable/button_drawable"
                     android:fontFamily="@font/poppins_semibold"
                     android:padding="5dp"
                     android:text="Get Location"
-                    android:layout_weight="1.5"
-                    android:layout_marginLeft="10dp"
                     android:textColor="@color/white"
                     android:textSize="15dp" />
-
-
 
 
             </LinearLayout>
@@ -212,41 +219,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="20dp"
             android:layout_below="@id/linear_layout_3"
-            android:orientation="horizontal">
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already have an account?"
                 android:fontFamily="@font/poppins_semibold"
+                android:text="Already have an account?"
                 android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
-                android:textSize="16dp"
-                android:textColor="#fe724d"
-                android:fontFamily="@font/poppins_semibold"
                 android:layout_marginBottom="10dp"
-                android:paddingLeft="10dp"/>
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="10dp"
+                android:text="Login"
+                android:textColor="#fe724d"
+                android:textSize="16dp" />
 
 
         </LinearLayout>
 
 
-
-
-
     </RelativeLayout>
-
-
-
 
 
 </ScrollView>

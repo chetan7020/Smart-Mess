@@ -11,16 +11,18 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.safar.smartmessdevhacks.customer.CustomerMainActivity;
 import com.safar.smartmessdevhacks.owner.OwnerMainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "SplashActivity";
+
+    public static QuerySnapshot allQueryDocumentSnapshots, topRatedQueryDocumentSnapshots;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
 
@@ -31,6 +33,10 @@ public class SplashActivity extends AppCompatActivity {
     private void initialize() {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+
+        allQueryDocumentSnapshots = null;
+        topRatedQueryDocumentSnapshots = null;
     }
 
     @Override
@@ -41,7 +47,7 @@ public class SplashActivity extends AppCompatActivity {
         init();
 
         if (firebaseAuth.getCurrentUser() != null) {
-            Log.d(TAG, "onCreate: "+firebaseAuth.getCurrentUser().getEmail());
+            Log.d(TAG, "onCreate: " + firebaseAuth.getCurrentUser().getEmail());
             firebaseFirestore
                     .collection("User")
                     .document(firebaseAuth.getCurrentUser().getEmail())

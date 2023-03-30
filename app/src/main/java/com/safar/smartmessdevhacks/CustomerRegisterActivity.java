@@ -36,11 +36,7 @@ public class CustomerRegisterActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private String name, email, phoneNumber, password;
 
-    String[] items = {"Veg", "Non-Veg", "Vegan"};
     String item;
-
-    AutoCompleteTextView autoCompleteTextView;
-    ArrayAdapter<String> adapterItems;
 
     private void init() {
         initialize();
@@ -52,7 +48,6 @@ public class CustomerRegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPhoneNumber = findViewById(R.id.etPhoneNumber);
         etPassword = findViewById(R.id.etPassword);
-        autoCompleteTextView = findViewById(R.id.actvPreference);
 
         btnRegister = findViewById(R.id.btnRegister);
 
@@ -60,9 +55,6 @@ public class CustomerRegisterActivity extends AppCompatActivity {
 
         name = email = phoneNumber = password = "";
 
-
-        adapterItems = new ArrayAdapter<String>(this, R.layout.list_item, items);
-        autoCompleteTextView.setAdapter(adapterItems);
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();

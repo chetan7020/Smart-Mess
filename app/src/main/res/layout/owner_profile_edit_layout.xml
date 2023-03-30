@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="20dp"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:padding="20dp">
 
 
     <TextView
@@ -21,42 +20,42 @@
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/editext_drawable"
         android:fontFamily="@font/poppins_medium"
         android:hint="Name"
-        android:padding="16dp"
-        android:layout_marginTop="20dp"/>
+        android:padding="16dp" />
 
     <EditText
         android:id="@+id/etMessName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/editext_drawable"
         android:fontFamily="@font/poppins_medium"
         android:hint="Mess Name"
-        android:padding="16dp"
-        android:layout_marginTop="20dp"/>
+        android:padding="16dp" />
 
     <EditText
         android:id="@+id/etUPI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/editext_drawable"
         android:fontFamily="@font/poppins_medium"
         android:hint="UPI"
-        android:padding="16dp"
-        android:layout_marginTop="20dp"/>
+        android:padding="16dp" />
 
 
     <EditText
         android:id="@+id/etPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/editext_drawable"
         android:fontFamily="@font/poppins_medium"
         android:hint="Phone Number"
-        android:padding="16dp"
-        android:layout_marginTop="20dp"/>
+        android:padding="16dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,15 +65,14 @@
 
         <EditText
             android:id="@+id/etLocation"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
             android:background="@drawable/editext_drawable"
             android:fontFamily="@font/poppins_medium"
             android:hint="Location"
-            android:layout_marginRight="5dp"
-            android:padding="16dp"
-            />
+            android:padding="16dp" />
 
         <Button
             android:id="@+id/btnChangeLocation"
@@ -83,12 +81,12 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="40dp"
             android:layout_marginRight="15dp"
-            app:backgroundTint="@null"
             android:background="@drawable/button_drawable"
             android:fontFamily="@font/poppins_semibold"
             android:padding="10dp"
             android:text="Change Location"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 
@@ -101,12 +99,12 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="15dp"
-        app:backgroundTint="@null"
         android:background="@drawable/button_drawable"
         android:fontFamily="@font/poppins_semibold"
         android:padding="10dp"
         android:text="Edit Profile"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:backgroundTint="@null" />
 
 
 </LinearLayout>

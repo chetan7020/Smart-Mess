@@ -16,16 +16,16 @@
             android:id="@+id/linear_layout_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="smart"
-                android:textSize="40dp"
                 android:textColor="#fe724d"
+                android:textSize="40dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -44,9 +44,9 @@
             android:id="@+id/linear_layout_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_below="@id/linear_layout_1"
             android:layout_marginTop="15dp"
+            android:orientation="vertical"
             android:padding="20dp">
 
 
@@ -77,9 +77,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_layout_2"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_marginTop="10dp">
+            android:padding="20dp">
 
 
             <EditText
@@ -103,7 +103,6 @@
                 android:padding="16dp" />
 
 
-
             <EditText
                 android:id="@+id/etPhoneNumber"
                 android:layout_width="match_parent"
@@ -118,10 +117,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/dark_grey"
+                android:layout_marginTop="20dp"
                 app:hintEnabled="false"
-                android:layout_marginTop="20dp">
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/dark_grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
@@ -136,38 +135,17 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/editext_drawable"
-                android:fontFamily="@font/poppins_medium"
-                android:padding="16dp"
-                android:hint="Select Preferences"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-                <AutoCompleteTextView
-                    android:id="@+id/actvPreference"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:backgroundTint="@color/orange"
                 android:fontFamily="@font/poppins_semibold"
                 android:padding="15dp"
                 android:text="Register Now"
                 android:textColor="@color/white"
-                android:textSize="17dp" />
+                android:textSize="17dp"
+                app:backgroundTint="@color/orange" />
 
         </LinearLayout>
 
@@ -175,37 +153,34 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="10dp"
             android:layout_below="@id/linear_layout_3"
-            android:orientation="horizontal">
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already have an account?"
                 android:fontFamily="@font/poppins_semibold"
+                android:text="Already have an account?"
                 android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login Now"
-                android:textSize="16dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:textColor="#fe724d"
                 android:layout_marginBottom="10dp"
-                android:paddingLeft="10dp"/>
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="10dp"
+                android:text="Login Now"
+                android:textColor="#fe724d"
+                android:textSize="16dp" />
 
 
         </LinearLayout>
 
     </RelativeLayout>
-
-
-
 
 
 </ScrollView>

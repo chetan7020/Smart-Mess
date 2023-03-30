@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,11 +21,12 @@
         <activity
             android:name=".owner.OwnerMainActivity"
             android:exported="false"
-            android:label="@string/title_activity_owner_main" />
+            android:label="@string/title_activity_owner_main"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".customer.MessInfoActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".customer.ReviewActivity"
             android:exported="false"
@@ -38,11 +40,11 @@
             android:name=".customer.CustomerMainActivity"
             android:exported="false"
             android:label="@string/title_activity_customer_main"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".CustomerRegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".OwnerRegisterActivity"
             android:exported="false"

@@ -27,8 +27,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="smart"
-                    android:textSize="40dp"
                     android:textColor="#fe724d"
+                    android:textSize="40dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -46,12 +46,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Copyright @ 2022"
-                android:textColor="@color/white"
-                android:gravity="center_horizontal"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="20dp"
-                android:fontFamily="@font/poppins"/>
+                android:fontFamily="@font/poppins"
+                android:gravity="center_horizontal"
+                android:text="Copyright @ 2022"
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 
