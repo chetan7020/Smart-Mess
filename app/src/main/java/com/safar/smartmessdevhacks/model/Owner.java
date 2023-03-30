@@ -1,7 +1,5 @@
 package com.safar.smartmessdevhacks.model;
 
-import android.util.Log;
-
 import com.google.firebase.firestore.GeoPoint;
 
 public class Owner {
@@ -15,30 +13,18 @@ public class Owner {
     public Owner() {
     }
 
-    public Owner(String name, String email, String messName, String upi, String geoHash, String phoneNumber, GeoPoint geoPoint, String messType) {
+    public Owner(String name, String email, String messName, String upi, String geoHash, String phoneNumber, String messType, GeoPoint geoPoint) {
         this.name = name;
         this.email = email;
         this.messName = messName;
         this.upi = upi;
         this.geoHash = geoHash;
         this.phoneNumber = phoneNumber;
+        this.messType = messType;
         this.geoPoint = geoPoint;
         this.customerCount = 0;
         this.reviewCount = 0.0;
         this.avgReview = 0.0;
-        this.messType = messType;
-    }
-
-    public Owner(double avgReview) {
-        this.reviewCount = avgReview;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public String getName() {
@@ -81,6 +67,22 @@ public class Owner {
         this.geoHash = geoHash;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getMessType() {
+        return messType;
+    }
+
+    public void setMessType(String messType) {
+        this.messType = messType;
+    }
+
     public GeoPoint getGeoPoint() {
         return geoPoint;
     }
@@ -111,13 +113,5 @@ public class Owner {
 
     public void setAvgReview(double avgReview) {
         this.avgReview = avgReview;
-    }
-
-    public String getMessType() {
-        return messType;
-    }
-
-    public void setMessType(String messType) {
-        this.messType = messType;
     }
 }

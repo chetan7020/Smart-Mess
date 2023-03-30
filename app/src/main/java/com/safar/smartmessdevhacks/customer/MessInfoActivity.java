@@ -8,6 +8,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -37,12 +38,8 @@ public class MessInfoActivity extends AppCompatActivity {
     private RatingBar rbStar;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
-    private String email;
-    private double avgReview = 0.0;
-    private String messName = "";
-    private String phoneNumber = "";
-    private String upi = "";
-    private String location = "";
+    private String email, messName, phoneNumber, upi;
+    private double avgReview;
     private GeoPoint geoPoint;
 
     private void init() {
@@ -68,6 +65,9 @@ public class MessInfoActivity extends AppCompatActivity {
         rlPay = findViewById(R.id.rlPay);
 
         email = getIntent().getExtras().getString("email");
+        messName = phoneNumber = upi  = "";
+        avgReview = 0.0;
+
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -132,11 +132,9 @@ public class MessInfoActivity extends AppCompatActivity {
                         Owner owner = value.toObject(Owner.class);
 
                         avgReview = owner.getAvgReview();
-//                        String email = owner.getEmail();
                         messName = owner.getMessName();
                         phoneNumber = owner.getPhoneNumber();
                         upi = owner.getUpi();
-                        location = "";
                         geoPoint = owner.getGeoPoint();
 
                         Thread thread = new Thread(new Runnable() {
@@ -147,7 +145,7 @@ public class MessInfoActivity extends AppCompatActivity {
                                     List<Address> addresses = geocoder.getFromLocation(owner.getGeoPoint().getLatitude(), owner.getGeoPoint().getLongitude(), 1);
                                     if (addresses != null && addresses.size() > 0) {
                                         Address address = addresses.get(0);
-                                        location = address.getSubLocality() + "-" + address.getLocality() + ", " + address.getPostalCode();
+                                  tvLocation.setText(address.getSubLocality() + "-" + address.getLocality() + ", " + address.getPostalCode());
                                     }
                                 } catch (IOException e) {
                                     e.printStackTrace();
@@ -158,7 +156,6 @@ public class MessInfoActivity extends AppCompatActivity {
 
                         rbStar.setRating((float) avgReview);
                         tvMessName.setText(messName);
-                        tvLocation.setText(location);
 
                     }
                 });

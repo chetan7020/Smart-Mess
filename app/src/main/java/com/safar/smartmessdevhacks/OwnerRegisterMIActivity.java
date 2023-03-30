@@ -26,17 +26,16 @@ import com.safar.smartmessdevhacks.model.Owner;
 import com.safar.smartmessdevhacks.model.User;
 import com.safar.smartmessdevhacks.owner.OwnerMainActivity;
 
-public class OwnerRegisterActivity extends AppCompatActivity {
+public class OwnerRegisterMIActivity extends AppCompatActivity {
 
     private static final String TAG = "OwnerRegisterActivity";
-    private EditText etName, etMessName, etPhoneNumber, etUpi, etEmail, etPassword, etLocation;
+    private EditText etMessName, etUpi, etLocation;
     private Button btnGetLocation, btnRegister;
     private TextView tvLogin;
     private Spinner spMessType;
+    private String messName, upi, location, messType;
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
-    private String name, messName, phoneNumber, upi, email, password, location, messType;
-
     private void init() {
         initialize();
 
@@ -47,12 +46,8 @@ public class OwnerRegisterActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-        etName = findViewById(R.id.etName);
         etMessName = findViewById(R.id.etMessName);
-        etPhoneNumber = findViewById(R.id.etPhoneNumber);
         etUpi = findViewById(R.id.etUpi);
-        etEmail = findViewById(R.id.etEmail);
-        etPassword = findViewById(R.id.etPassword);
         etLocation = findViewById(R.id.etLocation);
 
         btnGetLocation = findViewById(R.id.btnGetLocation);
@@ -62,7 +57,7 @@ public class OwnerRegisterActivity extends AppCompatActivity {
 
         tvLogin = findViewById(R.id.tvLogin);
 
-        name = messName = phoneNumber = upi = email = password = location = messType = "";
+        messName = upi = location = messType = "";
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -84,7 +79,7 @@ public class OwnerRegisterActivity extends AppCompatActivity {
         btnGetLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(OwnerRegisterActivity.this, "Yet to Build", Toast.LENGTH_SHORT).show();
+                Toast.makeText(OwnerRegisterMIActivity.this, "Yet to Build", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -95,43 +90,42 @@ public class OwnerRegisterActivity extends AppCompatActivity {
 
                 if (checkEmpty()) {
                     firebaseAuth
-                            .createUserWithEmailAndPassword(email, password)
+                            .createUserWithEmailAndPassword(OwnerRegisterPIActivity.email, OwnerRegisterPIActivity.password)
                             .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
                                     firebaseFirestore
                                             .collection("User")
-                                            .document(email)
-                                            .set(new User(email, "Owner"))
+                                            .document(OwnerRegisterPIActivity.email)
+                                            .set(new User(OwnerRegisterPIActivity.email, "Owner"))
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void unused) {
 
                                                     String geohash = GeoFireUtils.getGeoHashForLocation(new GeoLocation(18.455799, 73.866631));
 
-                                                    Log.d(TAG, "onSuccess: "+messType);
-
+                                                    Log.d(TAG, "onSuccess: " + messType);
                                                     firebaseFirestore
                                                             .collection("Owner")
-                                                            .document(email)
-                                                            .set(new Owner(name, email, messName, upi, geohash, phoneNumber, new GeoPoint(18.455799, 73.866631), messType))
+                                                            .document(OwnerRegisterPIActivity.email)
+                                                            .set(new Owner(OwnerRegisterPIActivity.name, OwnerRegisterPIActivity.email, messName, upi, geohash, OwnerRegisterPIActivity.phoneNumber, messType, new GeoPoint(18.455799, 73.866631)))
                                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                                 @Override
                                                                 public void onSuccess(Void unused) {
-                                                                    startActivity(new Intent(OwnerRegisterActivity.this, OwnerMainActivity.class));
+                                                                    startActivity(new Intent(OwnerRegisterMIActivity.this, OwnerMainActivity.class));
                                                                     finish();
                                                                 }
                                                             }).addOnFailureListener(new OnFailureListener() {
                                                                 @Override
                                                                 public void onFailure(@NonNull Exception e) {
-                                                                    Toast.makeText(OwnerRegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(OwnerRegisterMIActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                                                 }
                                                             });
                                                 }
                                             }).addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception e) {
-                                                    Toast.makeText(OwnerRegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(OwnerRegisterMIActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                                 }
                                             });
                                 }
@@ -142,7 +136,7 @@ public class OwnerRegisterActivity extends AppCompatActivity {
                                 }
                             });
                 } else {
-                    Toast.makeText(OwnerRegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OwnerRegisterMIActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -150,18 +144,14 @@ public class OwnerRegisterActivity extends AppCompatActivity {
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(OwnerRegisterActivity.this, LoginActivity.class));
+                startActivity(new Intent(OwnerRegisterMIActivity.this, LoginActivity.class));
             }
         });
     }
 
     private void getText() {
-        name = etName.getText().toString().trim();
         messName = etMessName.getText().toString().trim();
-        phoneNumber = etPhoneNumber.getText().toString().trim();
         upi = etUpi.getText().toString().trim();
-        email = etEmail.getText().toString().trim();
-        password = etPassword.getText().toString().trim();
         location = etLocation.getText().toString().trim();
         messType = spMessType.getSelectedItem().toString();
     }
@@ -171,7 +161,7 @@ public class OwnerRegisterActivity extends AppCompatActivity {
         if (messType.equals("Mess Type")) {
             return false;
         }
-        if (name.equals("") || messName.equals("") || phoneNumber.equals("") || upi.equals("") || email.equals("") || password.equals("") || location.equals("")) {
+        if (messName.equals("") || upi.equals("") || location.equals("")) {
             return false;
         }
         return true;
@@ -180,7 +170,7 @@ public class OwnerRegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_owner_register);
+        setContentView(R.layout.activity_owner_register_mi);
 
         init();
     }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
+    tools:context=".OwnerRegisterPIActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,7 +35,6 @@
                 android:textColor="@color/black"
                 android:textSize="38dp" />
 
-
         </LinearLayout>
 
 
@@ -45,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_layout_1"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical"
             android:padding="20dp">
 
@@ -55,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_horizontal"
-                android:text="Welcome to smartmess"
+                android:text="Create a new account"
                 android:textColor="@color/black"
                 android:textSize="25dp" />
 
@@ -64,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins"
-                android:text="Please enter your address below to start using app."
+                android:text="Please put your information below to create a new account for using app."
                 android:textAlignment="center"
                 android:textColor="#a6a7af"
                 android:textSize="17dp" />
@@ -77,9 +75,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_layout_2"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:padding="20dp">
+
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editext_drawable"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Name"
+                android:padding="16dp" />
+
+            <EditText
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/editext_drawable"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:padding="16dp" />
 
             <EditText
                 android:id="@+id/etEmail"
@@ -111,31 +130,17 @@
                     android:inputType="textPassword"
                     android:padding="16dp" />
 
-
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <TextView
-                android:id="@+id/tvForgetPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="Forgot Password?"
-                android:textAlignment="textEnd"
-                android:textColor="@color/orange"
-                android:textSize="15dp" />
-
-
             <Button
-                android:id="@+id/btnLogin"
+                android:id="@+id/btnNext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/button_drawable"
                 android:fontFamily="@font/poppins_semibold"
                 android:padding="15dp"
-                android:text="Sign in"
+                android:text="Next"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="17dp" />
@@ -144,86 +149,34 @@
 
 
         <LinearLayout
-            android:id="@+id/linear_layout_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/linear_layout_3"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingBottom="10dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Already have an account?"
+                android:textSize="16dp" />
 
-
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/grey" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Sign in with" />
-
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/grey" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/tvCustomer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/editext_drawable"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:padding="10dp"
-                    android:text="Customer"
-                    android:textAlignment="center"
-                    android:textColor="#60626A"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:id="@+id/tvOwner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/editext_drawable"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:padding="10dp"
-                    android:paddingLeft="10dp"
-                    android:text="Owner"
-                    android:textAlignment="center"
-                    android:textColor="#60626A"
-                    android:textSize="16dp" />
-
-
-            </LinearLayout>
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="10dp"
+                android:text="Login"
+                android:textColor="#fe724d"
+                android:textSize="16dp" />
 
         </LinearLayout>
 
-
     </RelativeLayout>
-
 
 </ScrollView>

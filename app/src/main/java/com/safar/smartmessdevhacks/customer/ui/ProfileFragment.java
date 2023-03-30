@@ -1,5 +1,6 @@
 package com.safar.smartmessdevhacks.customer.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.safar.smartmessdevhacks.LoginActivity;
 import com.safar.smartmessdevhacks.SplashActivity;
 import com.safar.smartmessdevhacks.databinding.CustomerFragmentProfileBinding;
 import com.safar.smartmessdevhacks.model.Customer;
@@ -30,11 +32,6 @@ public class ProfileFragment extends Fragment {
     private void init() {
         initialize();
 
-        if (SplashActivity.currentUser == null) {
-            SplashActivity.currentUser = firebaseAuth.getCurrentUser().getEmail();
-        }
-
-
         registerListener();
         getProfileInfo();
     }
@@ -45,13 +42,20 @@ public class ProfileFragment extends Fragment {
     }
 
     private void registerListener() {
-
+        binding.btnProfileLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firebaseAuth.signOut();
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+                getActivity().finish();
+            }
+        });
     }
 
     private void getProfileInfo() {
         firebaseFirestore
                 .collection("Customer")
-                .document(SplashActivity.currentUser)
+                .document(firebaseAuth.getCurrentUser().getEmail())
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {

@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OwnerRegisterActivity">
-
+    tools:context=".OwnerRegisterMIActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <LinearLayout
             android:id="@+id/linear_layout_1"
@@ -83,15 +81,6 @@
 
 
             <EditText
-                android:id="@+id/etName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/editext_drawable"
-                android:fontFamily="@font/poppins_medium"
-                android:hint="Full Name"
-                android:padding="16dp" />
-
-            <EditText
                 android:id="@+id/etMessName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,18 +101,6 @@
                 android:spinnerMode="dropdown" />
 
             <EditText
-                android:id="@+id/etPhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/editext_drawable"
-                android:fontFamily="@font/poppins_medium"
-                android:hint="Phone Number"
-                android:inputType="phone"
-                android:padding="16dp" />
-
-
-            <EditText
                 android:id="@+id/etUpi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -132,39 +109,6 @@
                 android:fontFamily="@font/poppins_medium"
                 android:hint="UPI ID"
                 android:padding="16dp" />
-
-
-            <EditText
-                android:id="@+id/etEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/editext_drawable"
-                android:drawableRight="@drawable/baseline_check_circle_outline_24"
-                android:fontFamily="@font/poppins_medium"
-                android:hint="Email"
-                android:padding="16dp" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:hintEnabled="false"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/dark_grey">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/editext_drawable"
-                    android:fontFamily="@font/poppins_medium"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:padding="16dp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -197,9 +141,7 @@
                     android:textColor="@color/white"
                     android:textSize="15dp" />
 
-
             </LinearLayout>
-
 
             <Button
                 android:id="@+id/btnRegister"
@@ -243,11 +185,8 @@
                 android:textColor="#fe724d"
                 android:textSize="16dp" />
 
-
         </LinearLayout>
 
-
     </RelativeLayout>
-
 
 </ScrollView>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartMessDevHacks</string>
+    <string name="app_name">smartMess</string>
     <string name="title_activity_customer_main">CustomerMainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
