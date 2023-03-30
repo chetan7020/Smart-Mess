@@ -1,7 +1,9 @@
 package com.safar.smartmessdevhacks.customer;
 
 import android.os.Bundle;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -13,14 +15,17 @@ import com.safar.smartmessdevhacks.databinding.ActivityCustomerMainBinding;
 
 public class CustomerMainActivity extends AppCompatActivity {
 
-private ActivityCustomerMainBinding binding;
+    public static String name, email, phoneNumber;
+    private ActivityCustomerMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-     binding = ActivityCustomerMainBinding.inflate(getLayoutInflater());
-     setContentView(binding.getRoot());
+        binding = ActivityCustomerMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        name = email = phoneNumber = null;
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(

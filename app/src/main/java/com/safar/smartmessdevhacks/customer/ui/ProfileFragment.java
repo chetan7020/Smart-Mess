@@ -18,6 +18,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.safar.smartmessdevhacks.LoginActivity;
+import com.safar.smartmessdevhacks.customer.CustomerMainActivity;
 import com.safar.smartmessdevhacks.databinding.CustomerFragmentProfileBinding;
 import com.safar.smartmessdevhacks.model.Customer;
 
@@ -36,6 +37,8 @@ public class ProfileFragment extends Fragment {
     }
 
     private void initialize() {
+
+
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
     }
@@ -52,24 +55,36 @@ public class ProfileFragment extends Fragment {
     }
 
     private void getProfileInfo() {
-        firebaseFirestore
-                .collection("Customer")
-                .document(firebaseAuth.getCurrentUser().getEmail())
-                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if (value != null) {
+        if (CustomerMainActivity.name == null) {
+            firebaseFirestore
+                    .collection("Customer")
+                    .document(firebaseAuth.getCurrentUser().getEmail())
+                    .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                        @Override
+                        public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                            if (value != null) {
 
-                            Customer customer = value.toObject(Customer.class);
+                                Customer customer = value.toObject(Customer.class);
 
-                            binding.tvName.setText(customer.getName());
-                            binding.tvEmail.setText(customer.getEmail());
-                            binding.tvPhoneNumber.setText(customer.getPhoneNumber());
-                        } else if (error != null) {
-                            makeToast(error.getMessage());
+                                CustomerMainActivity.name = customer.getName();
+                                CustomerMainActivity.email = customer.getEmail();
+                                CustomerMainActivity.phoneNumber = customer.getPhoneNumber();
+
+                                setProfileInfo();
+                            } else if (error != null) {
+                                makeToast(error.getMessage());
+                            }
                         }
-                    }
-                });
+                    });
+        } else {
+            setProfileInfo();
+        }
+    }
+
+    private void setProfileInfo() {
+        binding.tvName.setText(CustomerMainActivity.name);
+        binding.tvEmail.setText(CustomerMainActivity.email);
+        binding.tvPhoneNumber.setText(CustomerMainActivity.phoneNumber);
     }
 
     private void makeToast(String msg) {

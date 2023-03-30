@@ -1,12 +1,14 @@
 package com.safar.smartmessdevhacks.customer;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,9 +17,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.safar.smartmessdevhacks.CustomerRegisterActivity;
 import com.safar.smartmessdevhacks.R;
+import com.safar.smartmessdevhacks.model.Customer;
 import com.safar.smartmessdevhacks.model.Owner;
 import com.safar.smartmessdevhacks.model.Review;
 
@@ -30,19 +35,48 @@ public class ReviewActivity extends AppCompatActivity {
 
     private EditText etText;
     private MaterialRatingBar rbStar;
+    private TextView tvName;
     private Button btnPost;
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
     private String text, email, currentUser;
-
     private double star;
 
     private void init() {
         initialize();
         registerListener();
+        getUserData();
+    }
+
+    private void getUserData() {
+        if (CustomerMainActivity.name == null) {
+            firebaseFirestore
+                    .collection("Customer")
+                    .document(firebaseAuth.getCurrentUser().getEmail())
+                    .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                        @Override
+                        public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                            if (value != null) {
+
+                                Customer customer = value.toObject(Customer.class);
+
+                                CustomerMainActivity.name = customer.getName();
+                                CustomerMainActivity.email = customer.getEmail();
+                                CustomerMainActivity.phoneNumber = customer.getPhoneNumber();
+
+                                tvName.setText(CustomerMainActivity.name);
+                            } else if (error != null) {
+                                makeToast(error.getMessage());
+                            }
+                        }
+                    });
+        } else {
+            tvName.setText(CustomerMainActivity.name);
+        }
     }
 
     private void initialize() {
+        tvName = findViewById(R.id.tvName);
         etText = findViewById(R.id.descibe_review);
         rbStar = findViewById(R.id.rating_bar);
         btnPost = findViewById(R.id.btn_post);
@@ -51,10 +85,8 @@ public class ReviewActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         email = getIntent().getStringExtra("email");
-//        email = "chetandagajipatil333@gmail.com";
 
         currentUser = firebaseAuth.getCurrentUser().getEmail();
-//        currentUser = "xyz123@gmail.com";
 
         text = "";
     }
@@ -226,6 +258,10 @@ public class ReviewActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    private void makeToast(String msg) {
+        Toast.makeText(ReviewActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.ReviewActivity">x
+    tools:context=".customer.ReviewActivity">
 
     <TextView
         android:id="@+id/review_txt"
@@ -25,18 +25,17 @@
 
 
         <TextView
-            android:id="@+id/review_username"
+            android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
-            android:text="Yash Sandip Aher"
             android:textSize="18dp" />
 
         <TextView
             android:id="@+id/review_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/review_username"
+            android:layout_below="@id/tvName"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_medium"
             android:text="Reviews are public and include your account and device info. it also help to recommended the best food mess"
