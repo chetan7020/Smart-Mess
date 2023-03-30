@@ -97,6 +97,9 @@ public class MessInfoActivity extends AppCompatActivity {
                 double latitude = geoPoint.getLatitude();
                 double longitude = geoPoint.getLongitude();
 
+                String geoUri = "http://maps.google.com/maps?q=loc:" + latitude + "," + longitude + " (" + messName + ")";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUri));
+                startActivity(intent);
 
             }
         });

@@ -18,7 +18,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.safar.smartmessdevhacks.LoginActivity;
-import com.safar.smartmessdevhacks.SplashActivity;
 import com.safar.smartmessdevhacks.databinding.CustomerFragmentProfileBinding;
 import com.safar.smartmessdevhacks.model.Customer;
 
