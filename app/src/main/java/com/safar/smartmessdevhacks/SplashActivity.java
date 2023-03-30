@@ -22,6 +22,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = "SplashActivity";
 
+    public static String currentUser;
     public static QuerySnapshot allQueryDocumentSnapshots, topRatedQueryDocumentSnapshots;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -37,6 +38,8 @@ public class SplashActivity extends AppCompatActivity {
 
         allQueryDocumentSnapshots = null;
         topRatedQueryDocumentSnapshots = null;
+
+        currentUser = null;
     }
 
     @Override

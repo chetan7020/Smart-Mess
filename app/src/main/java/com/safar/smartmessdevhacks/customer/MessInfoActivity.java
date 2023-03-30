@@ -8,7 +8,6 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -75,6 +74,14 @@ public class MessInfoActivity extends AppCompatActivity {
     }
 
     private void registerListener() {
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                MessInfoActivity.super.onBackPressed();
+            }
+        });
         ivAddReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,16 +139,22 @@ public class MessInfoActivity extends AppCompatActivity {
                         location = "";
                         geoPoint = owner.getGeoPoint();
 
-                        Geocoder geocoder = new Geocoder(MessInfoActivity.this, Locale.getDefault());
-                        try {
-                            List<Address> addresses = geocoder.getFromLocation(owner.getGeoPoint().getLatitude(), owner.getGeoPoint().getLongitude(), 1);
-                            if (addresses != null && addresses.size() > 0) {
-                                Address address = addresses.get(0);
-                                location = address.getSubLocality() + "-" + address.getLocality() + ", " + address.getPostalCode();
+                        Thread thread = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Geocoder geocoder = new Geocoder(MessInfoActivity.this, Locale.getDefault());
+                                try {
+                                    List<Address> addresses = geocoder.getFromLocation(owner.getGeoPoint().getLatitude(), owner.getGeoPoint().getLongitude(), 1);
+                                    if (addresses != null && addresses.size() > 0) {
+                                        Address address = addresses.get(0);
+                                        location = address.getSubLocality() + "-" + address.getLocality() + ", " + address.getPostalCode();
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                        });
+                        thread.start();
 
                         rbStar.setRating((float) avgReview);
                         tvMessName.setText(messName);

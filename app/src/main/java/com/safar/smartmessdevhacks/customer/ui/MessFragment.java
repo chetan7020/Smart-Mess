@@ -164,18 +164,22 @@ public class MessFragment extends Fragment {
                 RatingBar rbStar = view.findViewById(R.id.rbStar);
 
                 tvMessName.setText(owner.getMessName());
-                Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
-
-                try {
-                    List<Address> addresses = geocoder.getFromLocation(owner.getGeoPoint().getLatitude(), owner.getGeoPoint().getLongitude(), 1);
-                    if (addresses != null && addresses.size() > 0) {
-                        Address address = addresses.get(0);
-                        tvLocation.setText(address.getSubLocality() + "-" + address.getLocality() + ", " + address.getPostalCode());
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
+                        try {
+                            List<Address> addresses = geocoder.getFromLocation(owner.getGeoPoint().getLatitude(), owner.getGeoPoint().getLongitude(), 1);
+                            if (addresses != null && addresses.size() > 0) {
+                                Address address = addresses.get(0);
+                                tvLocation.setText(address.getSubLocality() + "-" + address.getLocality() + ", " + address.getPostalCode());
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
+                });
+                thread.start();
                 tvMessType.setText(owner.getMessType());
                 tvEmail.setText(owner.getEmail());
                 rbStar.setRating((float) owner.getAvgReview());
