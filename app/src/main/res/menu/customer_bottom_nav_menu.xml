@@ -3,22 +3,22 @@
 
     <item
         android:id="@+id/navigation_coupon"
-        android:icon="@drawable/coupon2"
+        android:icon="@drawable/coupon_icon"
         android:title="Coupon"/>
 
     <item
         android:id="@+id/navigation_mess"
-        android:icon="@drawable/mess1"
+        android:icon="@drawable/mess_icon"
         android:title="Mess"/>
 
     <item
         android:id="@+id/navigation_offer"
-        android:icon="@drawable/offer1"
+        android:icon="@drawable/offer_icon"
         android:title="Offer"/>
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/profile1"
+        android:icon="@drawable/profile_icon"
         android:title="Profile"/>
 
 </menu>
