@@ -239,7 +239,6 @@
             android:textColor="@color/white"
             app:backgroundTint="@null" />
 
-
     </RelativeLayout>
 
 </ScrollView>
