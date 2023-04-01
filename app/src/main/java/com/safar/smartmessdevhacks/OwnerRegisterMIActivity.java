@@ -22,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
+import com.safar.smartmessdevhacks.comman.Validation;
 import com.safar.smartmessdevhacks.model.Owner;
 import com.safar.smartmessdevhacks.model.User;
 import com.safar.smartmessdevhacks.owner.OwnerMainActivity;
@@ -36,6 +37,7 @@ public class OwnerRegisterMIActivity extends AppCompatActivity {
     private String messName, upi, location, messType;
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
+
     private void init() {
         initialize();
 
@@ -87,54 +89,57 @@ public class OwnerRegisterMIActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getText();
-
                 if (checkEmpty()) {
-                    firebaseAuth
-                            .createUserWithEmailAndPassword(OwnerRegisterPIActivity.email, OwnerRegisterPIActivity.password)
-                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                                @Override
-                                public void onSuccess(AuthResult authResult) {
-                                    firebaseFirestore
-                                            .collection("User")
-                                            .document(OwnerRegisterPIActivity.email)
-                                            .set(new User(OwnerRegisterPIActivity.email, "Owner"))
-                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                @Override
-                                                public void onSuccess(Void unused) {
+                    if (!new Validation().upiValidation(upi)) {
+                        Toast.makeText(OwnerRegisterMIActivity.this, "Enter Valid UPI", Toast.LENGTH_SHORT).show();
+                    } else {
+                        firebaseAuth
+                                .createUserWithEmailAndPassword(OwnerRegisterPIActivity.email, OwnerRegisterPIActivity.password)
+                                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                    @Override
+                                    public void onSuccess(AuthResult authResult) {
+                                        firebaseFirestore
+                                                .collection("User")
+                                                .document(OwnerRegisterPIActivity.email)
+                                                .set(new User(OwnerRegisterPIActivity.email, "Owner"))
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
 
-                                                    String geohash = GeoFireUtils.getGeoHashForLocation(new GeoLocation(18.455799, 73.866631));
+                                                        String geohash = GeoFireUtils.getGeoHashForLocation(new GeoLocation(18.455799, 73.866631));
 
-                                                    Log.d(TAG, "onSuccess: " + messType);
-                                                    firebaseFirestore
-                                                            .collection("Owner")
-                                                            .document(OwnerRegisterPIActivity.email)
-                                                            .set(new Owner(OwnerRegisterPIActivity.name, OwnerRegisterPIActivity.email, messName, upi, geohash, OwnerRegisterPIActivity.phoneNumber, messType, new GeoPoint(18.455799, 73.866631)))
-                                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                @Override
-                                                                public void onSuccess(Void unused) {
-                                                                    startActivity(new Intent(OwnerRegisterMIActivity.this, OwnerMainActivity.class));
-                                                                    finish();
-                                                                }
-                                                            }).addOnFailureListener(new OnFailureListener() {
-                                                                @Override
-                                                                public void onFailure(@NonNull Exception e) {
-                                                                    Toast.makeText(OwnerRegisterMIActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                                                }
-                                                            });
-                                                }
-                                            }).addOnFailureListener(new OnFailureListener() {
-                                                @Override
-                                                public void onFailure(@NonNull Exception e) {
-                                                    Toast.makeText(OwnerRegisterMIActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                                }
-                                            });
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
+                                                        Log.d(TAG, "onSuccess: " + messType);
+                                                        firebaseFirestore
+                                                                .collection("Owner")
+                                                                .document(OwnerRegisterPIActivity.email)
+                                                                .set(new Owner(OwnerRegisterPIActivity.name, OwnerRegisterPIActivity.email, messName, upi, geohash, OwnerRegisterPIActivity.phoneNumber, messType, new GeoPoint(18.455799, 73.866631)))
+                                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                    @Override
+                                                                    public void onSuccess(Void unused) {
+                                                                        startActivity(new Intent(OwnerRegisterMIActivity.this, OwnerMainActivity.class));
+                                                                        finish();
+                                                                    }
+                                                                }).addOnFailureListener(new OnFailureListener() {
+                                                                    @Override
+                                                                    public void onFailure(@NonNull Exception e) {
+                                                                        Toast.makeText(OwnerRegisterMIActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                                    }
+                                                                });
+                                                    }
+                                                }).addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Toast.makeText(OwnerRegisterMIActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                    }
+                                                });
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
 
-                                }
-                            });
+                                    }
+                                });
+                    }
                 } else {
                     Toast.makeText(OwnerRegisterMIActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 }

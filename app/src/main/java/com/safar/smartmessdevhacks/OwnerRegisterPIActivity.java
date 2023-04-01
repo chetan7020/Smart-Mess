@@ -22,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
+import com.safar.smartmessdevhacks.comman.Validation;
 import com.safar.smartmessdevhacks.model.Owner;
 import com.safar.smartmessdevhacks.model.User;
 import com.safar.smartmessdevhacks.owner.OwnerMainActivity;
@@ -29,7 +30,7 @@ import com.safar.smartmessdevhacks.owner.OwnerMainActivity;
 public class OwnerRegisterPIActivity extends AppCompatActivity {
 
     private static final String TAG = "OwnerRegisterActivity";
-    private EditText etName, etPhoneNumber,etEmail, etPassword;
+    private EditText etName, etPhoneNumber, etEmail, etPassword;
     private Button btnNext;
     private TextView tvLogin;
 
@@ -64,7 +65,16 @@ public class OwnerRegisterPIActivity extends AppCompatActivity {
                 getText();
 
                 if (checkEmpty()) {
-                    startActivity(new Intent(OwnerRegisterPIActivity.this, OwnerRegisterMIActivity.class));
+
+                    if (!new Validation().emailValidation(email)) {
+                        Toast.makeText(OwnerRegisterPIActivity.this, "Enter Valid Email", Toast.LENGTH_SHORT).show();
+                    } else if (!new Validation().phoneNumberValidation(phoneNumber)) {
+                        Toast.makeText(OwnerRegisterPIActivity.this, "Enter Valid Phone Number", Toast.LENGTH_SHORT).show();
+                    } else if (!new Validation().passwordValidation(password)) {
+                        Toast.makeText(OwnerRegisterPIActivity.this, "Enter Strong Password", Toast.LENGTH_SHORT).show();
+                    } else {
+                        startActivity(new Intent(OwnerRegisterPIActivity.this, OwnerRegisterMIActivity.class));
+                    }
                 } else {
                     Toast.makeText(OwnerRegisterPIActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 }
