@@ -21,6 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
+import com.safar.smartmessdevhacks.comman.Validation;
 import com.safar.smartmessdevhacks.customer.CustomerMainActivity;
 import com.safar.smartmessdevhacks.model.Customer;
 import com.safar.smartmessdevhacks.model.Owner;
@@ -74,50 +75,57 @@ public class CustomerRegisterActivity extends AppCompatActivity {
                 getText();
 
                 if (checkEmpty()) {
-                    firebaseAuth
-                            .createUserWithEmailAndPassword(email, password)
-                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                                @Override
-                                public void onSuccess(AuthResult authResult) {
-                                    firebaseFirestore
-                                            .collection("User")
-                                            .document(email)
-                                            .set(new User(email, "Customer"))
-                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                @Override
-                                                public void onSuccess(Void unused) {
+                    if (!new Validation().emailValidation(email)) {
+                        Toast.makeText(CustomerRegisterActivity.this, "Enter Valid Email", Toast.LENGTH_SHORT).show();
+                    } else if (!new Validation().phoneNumberValidation(phoneNumber)) {
+                        Toast.makeText(CustomerRegisterActivity.this, "Enter Valid Phone Number", Toast.LENGTH_SHORT).show();
+                    } else if (!new Validation().passwordValidation(password)) {
+                        Toast.makeText(CustomerRegisterActivity.this, "Enter Strong Password", Toast.LENGTH_SHORT).show();
+                    } else {
+                        firebaseAuth
+                                .createUserWithEmailAndPassword(email, password)
+                                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                    @Override
+                                    public void onSuccess(AuthResult authResult) {
+                                        firebaseFirestore
+                                                .collection("User")
+                                                .document(email)
+                                                .set(new User(email, "Customer"))
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
 
-                                                    firebaseFirestore
-                                                            .collection("Customer")
-                                                            .document(email)
-                                                            .set(new Customer(name, email, phoneNumber))
-                                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                @Override
-                                                                public void onSuccess(Void unused) {
-                                                                    startActivity(new Intent(CustomerRegisterActivity.this, CustomerMainActivity.class));
-                                                                    finish();
-                                                                }
-                                                            }).addOnFailureListener(new OnFailureListener() {
-                                                                @Override
-                                                                public void onFailure(@NonNull Exception e) {
-                                                                    Toast.makeText(CustomerRegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                                                }
-                                                            });
-                                                }
-                                            }).addOnFailureListener(new OnFailureListener() {
-                                                @Override
-                                                public void onFailure(@NonNull Exception e) {
-                                                    Toast.makeText(CustomerRegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                                }
-                                            });
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(CustomerRegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
+                                                        firebaseFirestore
+                                                                .collection("Customer")
+                                                                .document(email)
+                                                                .set(new Customer(name, email, phoneNumber))
+                                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                    @Override
+                                                                    public void onSuccess(Void unused) {
+                                                                        startActivity(new Intent(CustomerRegisterActivity.this, CustomerMainActivity.class));
+                                                                        finish();
+                                                                    }
+                                                                }).addOnFailureListener(new OnFailureListener() {
+                                                                    @Override
+                                                                    public void onFailure(@NonNull Exception e) {
+                                                                        Toast.makeText(CustomerRegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                                    }
+                                                                });
+                                                    }
+                                                }).addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Toast.makeText(CustomerRegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                    }
+                                                });
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(CustomerRegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    }
                 } else {
                     Toast.makeText(CustomerRegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 }
