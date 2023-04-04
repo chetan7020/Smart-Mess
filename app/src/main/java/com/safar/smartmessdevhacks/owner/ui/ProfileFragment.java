@@ -86,7 +86,13 @@ public class ProfileFragment extends Fragment {
                                         if (addresses != null && addresses.size() > 0) {
                                             Address address = addresses.get(0);
                                             String location = (address.getSubLocality() + "-" + address.getLocality() + ", " + address.getPostalCode());
-                                            binding.tvLocation.setText(location);
+                                            getActivity().runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    binding.tvLocation.setText(location);
+                                                }
+                                            });
+//                                            binding.tvLocation.setText(location);
 //                                            binding.tvLocation.setText(address.getSubLocality() + "-" + address.getLocality() + ", " + address.getPostalCode());
                                         }
                                     } catch (IOException e) {
