@@ -5,96 +5,120 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.cardview.widget.CardView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="5dp">
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_weight="1.5"
+            app:cardElevation="5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/mess_img_1"
+                android:scaleType="centerCrop"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/orange"
+                android:alpha=".1"/>
+
+
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tvMessName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hotel Patil"
+                android:textSize="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="near wagholi, pune"
+                android:textSize="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/dark_grey"/>
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2">
-
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="170dp"
-                    android:scaleType="center"
-                    android:src="@drawable/mess_img_1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvEmail"
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/tvMessName"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Hotel Mumbai"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:id="@+id/tvLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:text="Near wagholi"
-                    android:textSize="14dp" />
+                    android:text="Category - "
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginTop="5dp"/>
 
                 <TextView
                     android:id="@+id/tvMessType"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
                     android:text="Veg"
-                    android:textSize="14dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rating" />
-
-                    <RatingBar
-                        android:id="@+id/rbStar"
-                        style="?android:attr/ratingBarStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="2dp" />
-
-                </LinearLayout>
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginTop="5dp"/>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <RatingBar
+                    android:id="@+id/rbStar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+
+
+
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
