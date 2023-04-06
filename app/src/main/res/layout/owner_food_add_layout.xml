@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center_horizontal"
+        android:text="Add Menu"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/etMenuName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/editext_drawable"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Menu Name"
+        android:padding="16dp" />
+
+
+    <EditText
+        android:id="@+id/etAddContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/editext_drawable"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Content"
+        android:drawableRight="@drawable/baseline_add_24"
+        android:padding="16dp" />
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:columnCount="3">
+
+        <include layout="@layout/add_content_display_layout"/>
+        <include layout="@layout/add_content_display_layout"/>
+        <include layout="@layout/add_content_display_layout"/>
+        <include layout="@layout/add_content_display_layout"/>
+        <include layout="@layout/add_content_display_layout"/>
+
+
+
+
+    </GridLayout>
+
+
+
+    <EditText
+        android:id="@+id/etNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/editext_drawable"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="Note"
+        android:padding="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/editext_drawable"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="Price"
+            android:inputType="number"
+            android:padding="16dp" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnSaveChanges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardview_2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/button_drawable"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="10dp"
+        android:text="Add Menu"
+        android:textColor="@color/white"
+        app:backgroundTint="@null" />
+
+
+
+
+</LinearLayout>

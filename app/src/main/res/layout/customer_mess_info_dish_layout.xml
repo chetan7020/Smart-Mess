@@ -4,73 +4,135 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2">
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/dish_img"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/mess_img_1" />
+                    android:layout_weight="2">
 
-            </LinearLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/dish_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/dish_img" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <TextView
-                    android:id="@+id/dish_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Premium Dish"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:id="@+id/dish_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:text="Rs. 2000"
-                    android:textSize="14dp" />
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Content - " />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/dish_content"
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/dish_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Dish Name"
+                            android:layout_weight="4"
+                            android:padding="10dp"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Rs.200"
+                            android:layout_weight="1"
+                            android:background="@color/orange"
+                            android:textColor="@color/white"
+                            android:padding="3dp"
+                            android:textSize="12dp" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="jfskdgsdiukoghosghsioghsioghsioghsioghsoghriogheriogheroig" />
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Content - " />
+
+                        <TextView
+                            android:id="@+id/dish_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chapati,2 Bhaji,papad" />
+
+                    </LinearLayout>
+
+                   <RelativeLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+
+
+                       <ImageView
+                           android:id="@+id/show_more"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:src="@drawable/baseline_keyboard_arrow_down_24"
+                           android:layout_alignParentRight="true"
+                           android:layout_margin="5dp"/>
+
+
+                   </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/note"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="kjsdhuioswehgiuokwgioerwgjowerg
+                                            iugerwuigiuergu8ieorgue8rogue8rguy8er"
+                            android:textSize="13dp"
+                            android:padding="3dp"
+                            android:fontFamily="@font/poppins"/>
+
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -78,10 +140,13 @@
             </LinearLayout>
 
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
 
-    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>
