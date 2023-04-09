@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class FoodFragment extends Fragment {
+public class MenuFragment extends Fragment {
 
     private static final String TAG = "FoodFragment";
     private String id, menuName, note, email, content;
@@ -101,7 +101,7 @@ public class FoodFragment extends Fragment {
             public void onClick(View view) {
                 addDialog = new Dialog(getActivity());
 
-                addDialog.setContentView(R.layout.owner_food_add_layout);
+                addDialog.setContentView(R.layout.owner_menu_add_layout);
                 addDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
                 EditText etMenuName, etContent, etNote, etPrice;
@@ -260,7 +260,7 @@ public class FoodFragment extends Fragment {
     private void editMenu(String id, String menuName, String note, int price) {
         updateDialog = new Dialog(getActivity());
 
-        updateDialog.setContentView(R.layout.owner_food_edit_layout);
+        updateDialog.setContentView(R.layout.owner_menu_edit_layout);
         updateDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         EditText etMenuName, etContent, etNote, etPrice;

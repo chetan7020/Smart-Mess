@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.safar.smartmessdevhacks.owner.ui.FoodFragment"
+        android:name="com.safar.smartmessdevhacks.owner.ui.MenuFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/owner_fragment_food" />
+        tools:layout="@layout/owner_fragment_menu" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
