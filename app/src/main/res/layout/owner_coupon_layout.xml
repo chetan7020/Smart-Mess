@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/cutoff_bg"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="centerCrop"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/star_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="15dp"
+                        android:src="@drawable/star"
+                        android:scaleType="centerCrop"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_hotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/star_img"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center_horizontal"
+                        android:text="Hotel saptshringi"
+                        android:textColor="@color/red"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/star_img1"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_margin="15dp"
+                        android:src="@drawable/star"
+                        android:layout_below="@id/tv_hotel"
+                        android:scaleType="centerCrop"/>
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_weight="1">
+
+
+                <TextView
+                    android:id="@+id/tv_coupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/oswald_semibold"
+                    android:paddingTop="5dp"
+                    android:text="COUPON"
+                    android:textColor="@color/red"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/coupon_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_coupon"
+                    android:fontFamily="@font/oswald_medium"
+                    android:text="Pay Rs.2000 and eat 30 days whole year"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"/>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/coupon_info">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Validity - "
+                        android:fontFamily="@font/oswald_medium"/>
+
+                    <TextView
+                        android:id="@+id/tv_validity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 days (lifetime)"
+                        android:fontFamily="@font/oswald_medium"/>
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_layout_1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_term_condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All terms and condition applied"
+                        android:fontFamily="@font/oswald_medium"
+                        android:layout_alignParentLeft="true"
+                        android:textSize="9dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="see more"
+                        android:fontFamily="@font/oswald_medium"
+                        android:textSize="10dp"/>
+
+
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
