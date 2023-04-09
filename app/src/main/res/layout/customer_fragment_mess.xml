@@ -18,14 +18,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp">
 
-            <androidx.cardview.widget.CardView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
                 android:elevation="1dp"
-                app:cardCornerRadius="50dp"
-                android:layout_alignParentLeft="true">
+                app:cardCornerRadius="50dp">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -47,9 +46,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@color/black"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Hi, Yash Aher" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -66,7 +64,7 @@
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_margin="5dp"
-                android:src="@drawable/notification"/>
+                android:src="@drawable/notification" />
 
 
         </RelativeLayout>
@@ -98,8 +96,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_below="@id/rel_layout_2"
-            app:cardCornerRadius="10dp"
-            android:layout_margin="15dp">
+            android:layout_margin="15dp"
+            app:cardCornerRadius="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -110,41 +108,39 @@
                     android:id="@+id/find_coupon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Find your food \n Recipe here"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Find your food \n Recipe here"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Check now"
                     android:layout_below="@id/find_coupon"
-                    android:padding="7dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textSize="10sp"
-                    android:textColor="@color/orange"
-                    android:background="@drawable/button_bg"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_bg"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="7dp"
+                    android:text="Check now"
+                    android:textColor="@color/orange"
+                    android:textSize="10sp" />
 
 
                 <ImageView
                     android:layout_width="200dp"
                     android:layout_height="200dp"
-                    android:src="@drawable/sample_img"
+                    android:layout_alignParentRight="true"
                     android:scaleType="centerCrop"
-                    android:layout_alignParentRight="true"/>
-
+                    android:src="@drawable/sample_img" />
 
 
             </RelativeLayout>
 
 
         </androidx.cardview.widget.CardView>
-
 
 
         <RelativeLayout
@@ -177,11 +173,11 @@
                         android:layout_margin="5dp"
                         android:background="@drawable/radio_selector"
                         android:button="@android:color/transparent"
-                        android:gravity="center"
                         android:fontFamily="@font/poppins_medium"
-                        android:textSize="14dp"
+                        android:gravity="center"
                         android:padding="8dp"
-                        android:text="All" />
+                        android:text="All"
+                        android:textSize="14dp" />
 
                     <RadioButton
                         android:id="@+id/rbVegan"
@@ -191,12 +187,12 @@
                         android:background="@drawable/radio_selector"
                         android:button="@android:color/transparent"
                         android:elevation="2dp"
-                        android:gravity="center"
-                        android:textColor="@color/dark_grey"
                         android:fontFamily="@font/poppins_medium"
-                        android:textSize="14dp"
+                        android:gravity="center"
                         android:padding="8dp"
-                        android:text="Vegan" />
+                        android:text="Vegan"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14dp" />
 
 
                     <RadioButton
@@ -207,12 +203,12 @@
                         android:background="@drawable/radio_selector"
                         android:button="@android:color/transparent"
                         android:elevation="2dp"
-                        android:gravity="center"
-                        android:textColor="@color/dark_grey"
                         android:fontFamily="@font/poppins_medium"
-                        android:textSize="14dp"
+                        android:gravity="center"
                         android:padding="8dp"
-                        android:text="Veg" />
+                        android:text="Veg"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14dp" />
 
                     <RadioButton
                         android:id="@+id/rbNonVeg"
@@ -222,12 +218,12 @@
                         android:background="@drawable/radio_selector"
                         android:button="@android:color/transparent"
                         android:elevation="2dp"
-                        android:gravity="center"
-                        android:textColor="@color/dark_grey"
                         android:fontFamily="@font/poppins_medium"
-                        android:textSize="14dp"
+                        android:gravity="center"
                         android:padding="8dp"
-                        android:text="Non veg" />
+                        android:text="Non veg"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14dp" />
 
                     <RadioButton
                         android:id="@+id/rblocation"
@@ -237,12 +233,12 @@
                         android:background="@drawable/radio_selector"
                         android:button="@android:color/transparent"
                         android:elevation="2dp"
-                        android:textColor="@color/dark_grey"
-                        android:gravity="center"
                         android:fontFamily="@font/poppins_medium"
-                        android:textSize="14dp"
+                        android:gravity="center"
                         android:padding="8dp"
-                        android:text="Location" />
+                        android:text="Location"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14dp" />
 
 
                     <RadioButton
@@ -253,12 +249,12 @@
                         android:background="@drawable/radio_selector"
                         android:button="@android:color/transparent"
                         android:elevation="2dp"
-                        android:gravity="center"
-                        android:textColor="@color/dark_grey"
                         android:fontFamily="@font/poppins_medium"
-                        android:textSize="14dp"
+                        android:gravity="center"
                         android:padding="8dp"
-                        android:text="Rating" />
+                        android:text="Rating"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14dp" />
 
 
                 </RadioGroup>
@@ -267,40 +263,33 @@
             </HorizontalScrollView>
 
 
-
         </RelativeLayout>
 
         <TextView
             android:id="@+id/all_mess_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="All Mess"
             android:layout_below="@id/rel_layout_3"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
-            android:textColor="@color/black"
             android:fontFamily="@font/poppins_semibold"
-            android:textSize="18dp"/>
+            android:text="All Mess"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
 
         <LinearLayout
             android:id="@+id/llAllData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:layout_below="@id/all_mess_txt"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
 
-
-
-
         </LinearLayout>
-
-
-
 
 
     </RelativeLayout>

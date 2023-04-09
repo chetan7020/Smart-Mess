@@ -27,6 +27,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.safar.smartmessdevhacks.R;
 import com.safar.smartmessdevhacks.SplashActivity;
+import com.safar.smartmessdevhacks.customer.CustomerMainActivity;
 import com.safar.smartmessdevhacks.customer.MessInfoActivity;
 import com.safar.smartmessdevhacks.databinding.CustomerFragmentMessBinding;
 import com.safar.smartmessdevhacks.model.Owner;
@@ -45,6 +46,12 @@ public class MessFragment extends Fragment {
     private void init() {
         initialize();
         registerListener();
+
+        if (CustomerMainActivity.name != null) {
+            binding.tvUsername.setText("Hi, " + CustomerMainActivity.name);
+        }else{
+
+        }
 
         if (SplashActivity.allQueryDocumentSnapshots == null) {
             Log.d(TAG, "init: Hello");
