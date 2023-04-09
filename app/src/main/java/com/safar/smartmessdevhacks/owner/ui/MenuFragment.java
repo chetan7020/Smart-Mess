@@ -26,7 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.safar.smartmessdevhacks.R;
-import com.safar.smartmessdevhacks.databinding.OwnerFragmentFoodBinding;
+import com.safar.smartmessdevhacks.databinding.OwnerFragmentMenuBinding;
 import com.safar.smartmessdevhacks.model.Menu;
 
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class MenuFragment extends Fragment {
     private Dialog addDialog, updateDialog;
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
-    private OwnerFragmentFoodBinding binding;
+    private OwnerFragmentMenuBinding binding;
 
     private void init() {
         initialize();
@@ -494,7 +494,7 @@ public class MenuFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = OwnerFragmentFoodBinding.inflate(getLayoutInflater());
+        binding = OwnerFragmentMenuBinding.inflate(getLayoutInflater());
 
         init();
 

@@ -12,6 +12,12 @@
         tools:layout="@layout/owner_fragment_menu" />
 
     <fragment
+        android:id="@+id/navigation_manage_coupon"
+        android:name="com.safar.smartmessdevhacks.owner.ui.ManageCouponFragment"
+        android:label="Coupon"
+        tools:layout="@layout/fragment_manage_coupon" />
+
+    <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.safar.smartmessdevhacks.owner.ui.CustomerFragment"
         android:label="@string/title_dashboard"
