@@ -422,9 +422,9 @@ public class FoodFragment extends Fragment {
                 for (int j = 0; j < contents.size(); j++) {
 
                     if (j != (contents.size() - 1)) {
-                        content.append(j + 1).append(". ").append(contents.get(i)).append("\n");
+                        content.append(j + 1).append(". ").append(contents.get(j)).append("\n");
                     } else {
-                        content.append(j + 1).append(". ").append(contents.get(i));
+                        content.append(j + 1).append(". ").append(contents.get(j));
                     }
                 }
 
