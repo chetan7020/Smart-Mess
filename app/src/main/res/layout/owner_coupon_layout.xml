@@ -6,71 +6,79 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:cardCornerRadius="15dp"
         android:elevation="20dp">
 
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/rel_layout_2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/linear_layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1.5">
 
 
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/cutoff_bg"
-                    android:layout_alignParentRight="true"
-                    android:scaleType="centerCrop"/>
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
 
-                    <ImageView
-                        android:id="@+id/star_img"
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/star"
-                        android:scaleType="centerCrop"/>
-
-
-                    <TextView
-                        android:id="@+id/tv_hotel"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/star_img"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center_horizontal"
-                        android:text="Hotel saptshringi"
-                        android:textColor="@color/red"
-                        android:textSize="20dp" />
+                        android:layout_marginTop="30dp">
 
-                    <ImageView
-                        android:id="@+id/star_img1"
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/star"
-                        android:layout_below="@id/tv_hotel"
-                        android:scaleType="centerCrop"/>
+                        <ImageView
+                            android:id="@+id/star_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="15dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/star" />
 
 
+                        <TextView
+                            android:id="@+id/tv_hotel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/star_img"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_horizontal"
+                            android:text="Hotel saptshringi"
+                            android:textColor="@color/red"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:id="@+id/star_img1"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_below="@id/tv_hotel"
+                            android:layout_margin="15dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/star" />
+
+
+                    </RelativeLayout>
 
 
                 </RelativeLayout>
@@ -84,7 +92,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:layout_weight="1">
 
@@ -136,33 +144,35 @@
 
 
                 <RelativeLayout
+                    android:id="@+id/rel_layout_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/linear_layout_1"
-                    android:layout_alignParentBottom="true"
                     android:layout_marginTop="10dp">
 
-                    <TextView
-                        android:id="@+id/tv_term_condition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="All terms and condition applied"
-                        android:fontFamily="@font/oswald_medium"
-                        android:layout_alignParentLeft="true"
-                        android:textSize="9dp"/>
+                   <Button
+                       android:id="@+id/edit_coupon_btn"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_alignParentLeft="true"
+                       android:textSize="14dp"
+                       android:backgroundTint="@color/orange"
+                       android:textColor="@color/white"
+                       android:fontFamily="@font/poppins_medium"
+                       android:text="Edit"/>
 
-                    <TextView
+                    <Button
+                        android:id="@+id/delete_coupon_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:text="see more"
-                        android:fontFamily="@font/oswald_medium"
-                        android:textSize="10dp"/>
-
-
+                        android:textSize="14dp"
+                        android:backgroundTint="@color/red"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Delete"/>
 
                 </RelativeLayout>
-
 
 
             </RelativeLayout>
@@ -171,8 +181,45 @@
         </LinearLayout>
 
 
+            <LinearLayout
+                android:id="@+id/expandable_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/linear_layout_main"
+                android:orientation="vertical">
 
 
+                <TextView
+                    android:id="@+id/tv_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="kkiuewgvhniuwkevhweghwiuoghwiughwiguhwgiuwhgiouwewoegwehweiweiuwewhegighiuwghweighweiug"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginBottom="10dp"/>
+
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/see_more"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/expandable_note"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/baseline_keyboard_arrow_down_24" />
+
+
+        </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>
